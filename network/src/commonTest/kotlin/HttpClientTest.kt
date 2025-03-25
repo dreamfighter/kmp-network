@@ -1,4 +1,4 @@
-import id.dreamfighter.multiplatform.api.req
+import id.dreamfighter.kmp.network.req
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.coroutineScope

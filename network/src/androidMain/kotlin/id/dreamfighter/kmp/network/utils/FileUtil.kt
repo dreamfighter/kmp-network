@@ -1,4 +1,4 @@
-package id.dreamfighter.multiplatform.api.utils
+package id.dreamfighter.kmp.network.utils
 
 import id.dreamfighter.multiplatform.api.applicationContext
 import kotlinx.serialization.json.Json

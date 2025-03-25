@@ -1,6 +1,6 @@
-package id.dreamfighter.multiplatform.api
+package id.dreamfighter.kmp.network
 
-import id.dreamfighter.multiplatform.api.model.Request
+import id.dreamfighter.kmp.network.model.Request
 import io.ktor.client.HttpClient
 import kotlin.reflect.KClass
 

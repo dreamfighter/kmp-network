@@ -1,8 +1,8 @@
-import id.dreamfighter.multiplatform.api.ApiRequest
-import id.dreamfighter.multiplatform.api.Transaction
-import id.dreamfighter.multiplatform.api.client
-import id.dreamfighter.multiplatform.api.req
-import id.dreamfighter.multiplatform.api.setBaseUrl
+import id.dreamfighter.kmp.network.ApiRequest
+import id.dreamfighter.kmp.network.Transaction
+import id.dreamfighter.kmp.network.client
+import id.dreamfighter.kmp.network.req
+import id.dreamfighter.kmp.network.setBaseUrl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -130,9 +130,9 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
     }
 }
 
-//kotlin.sourceSets.commonMain {
-//    kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
-//}
+kotlin.sourceSets.commonMain {
+    kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
+}
 
 ksp {
     arg("measureDuration", "true")

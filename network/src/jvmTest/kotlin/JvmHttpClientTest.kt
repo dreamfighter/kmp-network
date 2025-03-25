@@ -1,8 +1,6 @@
-
-import id.dreamfighter.multiplatform.api.client
-import id.dreamfighter.multiplatform.api.req
-import io.ktor.client.HttpClient
-import io.ktor.server.util.url
+import id.dreamfighter.kmp.network.Api
+import id.dreamfighter.kmp.network.flowReq
+import id.dreamfighter.kmp.network.req
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
@@ -16,7 +14,8 @@ class JvmHttpClientTest {
     fun `test 3rd element`(): Unit = runBlocking {
 
         //client.setBaseUrl("http://127.0.0.1:3000")
-        //val result = req<Transaction>(request = ApiRequest.Transaction(id = 10))
+        //val result = flowReq(Api.getProfile(20, mapOf()))
+
         //println(result)
     }
     @After

@@ -1,4 +1,4 @@
-package id.dreamfighter.multiplatform.api.model
+package id.dreamfighter.kmp.network.model
 
 import io.ktor.http.content.PartData
 

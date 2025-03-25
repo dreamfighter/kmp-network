@@ -1,10 +1,10 @@
-package id.dreamfighter.multiplatform.api
+package id.dreamfighter.kmp.network
 
 import id.dreamfighter.multiplatform.annotation.Get
 import id.dreamfighter.multiplatform.annotation.Path
 import id.dreamfighter.multiplatform.annotation.Post
 import id.dreamfighter.multiplatform.annotation.Query
-import id.dreamfighter.multiplatform.api.model.Request
+import id.dreamfighter.kmp.network.model.Request
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.HttpTimeout

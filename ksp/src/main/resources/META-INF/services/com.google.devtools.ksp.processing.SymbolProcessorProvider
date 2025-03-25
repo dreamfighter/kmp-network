@@ -1,1 +1,2 @@
-id.dreamfighter.multiplatform.ksp.processor.RequestProcessorProvider
+id.dreamfighter.kmp.ksp.processor.RequestProcessorProvider
+id.dreamfighter.kmp.ksp.processor.RequestIfaceProcessorProvider

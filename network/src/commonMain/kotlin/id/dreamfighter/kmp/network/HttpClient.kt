@@ -1,21 +1,19 @@
-package id.dreamfighter.multiplatform.api
+package id.dreamfighter.kmp.network
 
+import id.dreamfighter.kmp.network.model.Request
+import id.dreamfighter.kmp.network.model.Resource
+import id.dreamfighter.kmp.network.model.TokenResponse
 import id.dreamfighter.multiplatform.annotation.Body
 import id.dreamfighter.multiplatform.annotation.Get
-import id.dreamfighter.multiplatform.annotation.Header
-import id.dreamfighter.multiplatform.annotation.Multipart
 import id.dreamfighter.multiplatform.annotation.Path
 import id.dreamfighter.multiplatform.annotation.Post
 import id.dreamfighter.multiplatform.annotation.Query
-import id.dreamfighter.multiplatform.api.model.Request
-import id.dreamfighter.multiplatform.api.model.Resource
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException
 import io.ktor.client.plugins.ServerResponseException
 import io.ktor.client.request.HttpRequestBuilder
-import io.ktor.client.request.forms.formData
 import io.ktor.client.request.forms.submitForm
 import io.ktor.client.request.forms.submitFormWithBinaryData
 import io.ktor.client.request.get
@@ -29,6 +27,7 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.http.contentType
 import io.ktor.http.encodeURLPathPart
 import io.ktor.http.parameters
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -130,13 +129,28 @@ suspend inline fun <reified T> req(request: Request, interceptor: HttpRequestBui
         return (Resource.Error(e.message ?: "Something went wrong"))
     }
 }
+
+fun Request.withFormData(fileName:String,byteArray: ByteArray):Request{
+    this.formData = io.ktor.client.request.forms.formData {
+        append("media", byteArray, Headers.build {
+            append(HttpHeaders.ContentType, "image/png")
+            append(HttpHeaders.ContentDisposition, "filename=$fileName")
+        })
+    }
+    return this
+}
 /*
 @Multipart
 @Post(url = "/auth/google")
 data class AuthGoogle(@Body val map: Map<String,String>,
                       @Path val id:Int,
                       @Query val name:String)
-
-@Get("/auth/google")
-data class Profile(@Path val id:Int, @Query val name:String)
 */
+
+@Post("/api/billing/waiting_confirmation/{billingUuid}")
+data class BillingWaitingConfirmation(@Path val billingUuid:String, @Body val payload: Map<String, String>)
+
+interface ApiReq{
+    @Get("/auth/google")
+    fun getProfile(@Path id:Int,@Body payload:Map<String,Any>):TokenResponse
+}

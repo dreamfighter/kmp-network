@@ -1,4 +1,4 @@
-package id.dreamfighter.multiplatform.ksp.processor
+package id.dreamfighter.kmp.ksp.processor
 
 import com.google.devtools.ksp.containingFile
 import com.google.devtools.ksp.getDeclaredProperties
@@ -35,7 +35,7 @@ class RequestProcessor(private val codeGenerator: CodeGenerator, private val log
                 if(allFiles.iterator().hasNext()) {
                     val packageName = allFiles.iterator().asSequence().first().containingFile?.packageName?.asString()
                     writer.write("package $packageName\n\n")
-                    writer.write("import id.dreamfighter.multiplatform.api.model.Request\n")
+                    writer.write("import id.dreamfighter.kmp.network.model.Request\n")
                     writer.write("object Req{\n")
                     allFiles.forEach {
                         logger.warn("processing $it")
