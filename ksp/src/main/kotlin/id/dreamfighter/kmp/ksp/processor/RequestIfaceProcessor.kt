@@ -1,17 +1,16 @@
 package id.dreamfighter.kmp.ksp.processor
 
 import com.google.devtools.ksp.containingFile
-import com.google.devtools.ksp.getDeclaredProperties
 import com.google.devtools.ksp.processing.*
 import com.google.devtools.ksp.symbol.*
 import com.google.devtools.ksp.visitor.KSTopDownVisitor
-import id.dreamfighter.multiplatform.annotation.Body
-import id.dreamfighter.multiplatform.annotation.Get
-import id.dreamfighter.multiplatform.annotation.Header
-import id.dreamfighter.multiplatform.annotation.Multipart
-import id.dreamfighter.multiplatform.annotation.Path
-import id.dreamfighter.multiplatform.annotation.Post
-import id.dreamfighter.multiplatform.annotation.Query
+import id.dreamfighter.kmp.annotation.Body
+import id.dreamfighter.kmp.annotation.Get
+import id.dreamfighter.kmp.annotation.Header
+import id.dreamfighter.kmp.annotation.Multipart
+import id.dreamfighter.kmp.annotation.Path
+import id.dreamfighter.kmp.annotation.Post
+import id.dreamfighter.kmp.annotation.Query
 import java.io.OutputStreamWriter
 
 class RequestIfaceProcessor(private val codeGenerator: CodeGenerator, private val logger: KSPLogger) : SymbolProcessor {

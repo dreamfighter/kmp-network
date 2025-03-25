@@ -45,11 +45,11 @@ kotlin {
         //pod("GoogleSignIn")
     }
 
-     */
+
 
     iosX64()
     iosArm64()
-    iosSimulatorArm64()
+    iosSimulatorArm64()*/
     linuxX64()
 
     sourceSets {
@@ -130,9 +130,12 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
     }
 }
 
+/*
 kotlin.sourceSets.commonMain {
     kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
 }
+
+ */
 
 ksp {
     arg("measureDuration", "true")

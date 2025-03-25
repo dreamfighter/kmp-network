@@ -29,7 +29,7 @@ kotlin {
 }
 
 android {
-    namespace = "id.dreamfighter.multiplatform.annotation"
+    namespace = "id.dreamfighter.kmp.annotation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()

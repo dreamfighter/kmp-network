@@ -5,7 +5,7 @@ plugins {
 }
 
 allprojects {
-    group = "com.github.dreamfighter.multiplatform"
+    group = "com.github.dreamfighter.kmp"
     version = "0.0.5"
 }
 

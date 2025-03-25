@@ -1,9 +1,9 @@
 package id.dreamfighter.kmp.network
 
-import id.dreamfighter.multiplatform.annotation.Get
-import id.dreamfighter.multiplatform.annotation.Path
-import id.dreamfighter.multiplatform.annotation.Post
-import id.dreamfighter.multiplatform.annotation.Query
+import id.dreamfighter.kmp.annotation.Get
+import id.dreamfighter.kmp.annotation.Path
+import id.dreamfighter.kmp.annotation.Post
+import id.dreamfighter.kmp.annotation.Query
 import id.dreamfighter.kmp.network.model.Request
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
@@ -17,7 +17,6 @@ import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.request.header
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import kotlin.reflect.KClass
 import kotlin.reflect.full.memberProperties
 
 actual val client: HttpClient = HttpClient(OkHttp) {

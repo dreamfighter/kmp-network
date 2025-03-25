@@ -3,11 +3,10 @@ package id.dreamfighter.kmp.network
 import id.dreamfighter.kmp.network.model.Request
 import id.dreamfighter.kmp.network.model.Resource
 import id.dreamfighter.kmp.network.model.TokenResponse
-import id.dreamfighter.multiplatform.annotation.Body
-import id.dreamfighter.multiplatform.annotation.Get
-import id.dreamfighter.multiplatform.annotation.Path
-import id.dreamfighter.multiplatform.annotation.Post
-import id.dreamfighter.multiplatform.annotation.Query
+import id.dreamfighter.kmp.annotation.Body
+import id.dreamfighter.kmp.annotation.Get
+import id.dreamfighter.kmp.annotation.Path
+import id.dreamfighter.kmp.annotation.Post
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.ClientRequestException
@@ -27,7 +26,6 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.http.contentType
 import io.ktor.http.encodeURLPathPart
 import io.ktor.http.parameters
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -152,5 +150,5 @@ data class BillingWaitingConfirmation(@Path val billingUuid:String, @Body val pa
 
 interface ApiReq{
     @Get("/auth/google")
-    fun getProfile(@Path id:Int,@Body payload:Map<String,Any>):TokenResponse
+    fun getProfile(@Path id:Int, @Body payload:Map<String,Any>):TokenResponse
 }
