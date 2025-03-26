@@ -143,7 +143,7 @@ fun Request.withFormData(fileName:String,byteArray: ByteArray):Request{
 data class AuthGoogle(@Body val map: Map<String,String>,
                       @Path val id:Int,
                       @Query val name:String)
-*/
+
 
 @Post("/api/billing/waiting_confirmation/{billingUuid}")
 data class BillingWaitingConfirmation(@Path val billingUuid:String, @Body val payload: Map<String, String>)
@@ -152,3 +152,4 @@ interface ApiReq{
     @Get("/auth/google")
     fun getProfile(@Path id:Int, @Body payload:Map<String,Any>):TokenResponse
 }
+ */
